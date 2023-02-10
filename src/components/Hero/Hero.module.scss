@@ -1,0 +1,32 @@
+@import "../../scss/variables";
+.heroSection {
+    height: 100vh;
+    .bgWrapper {
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .bannerWrapper {
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        .banner {
+            cursor: pointer;
+            border-radius: 0.8rem;
+            margin: 0 20px 20px 0;
+            padding: 2rem 1rem;
+            background-color: $orange;
+            & > * {
+                color: $background;
+            }
+        }
+    }
+}
