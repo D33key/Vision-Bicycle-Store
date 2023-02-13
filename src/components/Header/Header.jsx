@@ -5,6 +5,7 @@ import { ReactComponent as LoginMobile } from "./assets/login.svg";
 import { ReactComponent as BurgerMobile } from "./assets/burger.svg";
 import cl from "./Header.module.scss";
 import Item from "./HeaderItems/Item";
+import useMatchMedia from "../../hooks/useMatchMedia";
 
 const Header = () => {
     const listsOfMenu = [
@@ -28,16 +29,20 @@ const Header = () => {
         },
     ];
 
+    let { isMobile, isTablet, isDesktop } = useMatchMedia();
+
     return (
         <header className={cl.header}>
             <nav className={cl.nav}>
-                <div className={cl.controls}>
-                    <div className={cl.controlsButton}>
-                        <button type="button" className={cl.svgMobile}>
-                            <BurgerMobile />
-                        </button>
+                {isMobile || isTablet ? (
+                    <div className={cl.controls}>
+                        <div className={cl.controlsButton}>
+                            <button type="button" className={cl.svgMobile}>
+                                <BurgerMobile />
+                            </button>
+                        </div>
                     </div>
-                </div>
+                ) : null}
                 <a className={cl.logo} href="/">
                     <LogoSVG />
                 </a>
@@ -53,17 +58,21 @@ const Header = () => {
                 </ul>
                 <div className={cl.controls}>
                     <div className={cl.controlsButton}>
-                        <div className={cl.svgMobile}>
-                            <LoginMobile />
-                        </div>
+                        {isMobile || isTablet ? (
+                            <div className={cl.svgMobile}>
+                                <LoginMobile />
+                            </div>
+                        ) : null}
                         <a href="/">
                             <span className={cl.label}>Login</span>
                         </a>
                     </div>
                     <button type="button" className={cl.controlsButton}>
-                        <div className={cl.svgMobile}>
-                            <CartMobile />
-                        </div>
+                        {isMobile || isTablet ? (
+                            <div className={cl.svgMobile}>
+                                <CartMobile />
+                            </div>
+                        ) : null}
                         <span className={cl.label}>
                             {"Cart ("}
                             <span className={cl.cartCount}>0</span>
