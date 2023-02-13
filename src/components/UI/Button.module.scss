@@ -1,0 +1,35 @@
+@import "../../scss/variables";
+.buttonWrapper {
+    cursor: pointer;
+    border-radius: 0.8rem;
+    margin: 20px;
+    padding: 2rem 1rem;
+    text-transform: uppercase;
+    &.white {
+        background-color: $white;
+    }
+    &.black {
+        background-color: $black;
+    }
+    @media screen and (max-width: 766px) {
+        margin: 0;
+        margin-bottom: 20px;
+    }
+    & > .subtitle {
+        font-size: 1rem;
+        
+        &.white{
+            color: $white;
+        }
+    }
+    & > .title {
+        font-size: 2rem;
+        font-weight: bold;
+        &.white{
+            color: $white;
+        }
+        @media screen and (max-width: 766px) {
+            font-size: 1.5rem;
+        }
+    }
+}

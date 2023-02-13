@@ -12,21 +12,13 @@
             height: 100%;
         }
     }
-
-    .bannerWrapper {
+    .buttonWrapper {
         height: 100%;
         display: flex;
         justify-content: flex-end;
         align-items: flex-end;
-        .banner {
-            cursor: pointer;
-            border-radius: 0.8rem;
-            margin: 0 20px 20px 0;
-            padding: 2rem 1rem;
-            background-color: $orange;
-            & > * {
-                color: $background;
-            }
+        @media screen and (max-width: 766px) {
+            justify-content: center;
         }
     }
 }
