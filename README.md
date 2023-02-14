@@ -1,4 +1,4 @@
-# Vision | Bycicle store
+# Vision | Bycicle store (In progress)
 
 My second project using ReactJS. Right now it's in progress.
 
