@@ -1,0 +1,28 @@
+.section {
+    height: 60vh;
+    margin: 3%;
+    .wrapper {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .title {
+            max-width: 45%;
+            line-height: 80%;
+            letter-spacing: -0.02em;
+            font-size: 4rem;
+        }
+        .info {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            .description {
+                max-width: 20%;
+            }
+            .logo {
+                width: 50px;
+                height: 50px;
+            }
+        }
+    }
+}
