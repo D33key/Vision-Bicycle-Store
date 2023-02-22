@@ -1,31 +1,47 @@
 import React from "react";
+import cl from "./Header.module.scss";
+import Item from "./HeaderItems/Item";
+import useMatchMedia from "../../hooks/useMatchMedia";
+
 import { ReactComponent as LogoSVG } from "./assets/logo.svg";
 import { ReactComponent as CartMobile } from "./assets/cartMobile.svg";
 import { ReactComponent as LoginMobile } from "./assets/login.svg";
 import { ReactComponent as BurgerMobile } from "./assets/burger.svg";
-import cl from "./Header.module.scss";
-import Item from "./HeaderItems/Item";
-import useMatchMedia from "../../hooks/useMatchMedia";
+import { Route, Routes } from "react-router-dom";
 
 const Header = () => {
     const listsOfMenu = [
         {
             title: "Electric",
-            subtitles: ["All", "Ivy", "Ace", "Company"],
+            subtitles: [
+                { name: "All", url: "/allelectric" },
+                { name: "Ivy", url: "/ivy" },
+                { name: "Ace", url: "/ace" },
+                { name: "Company", url: "/company" },
+            ],
         },
         {
             title: "City",
-            subtitles: ["All", "Men", "Women"],
+            subtitles: [
+                { name: "All", url: "/allcity" },
+                { name: "Men", url: "/man" },
+                { name: "Women", url: "/women" },
+            ],
         },
         {
             title: "Kids",
+            url: "/kids",
         },
         {
             title: "Accessories",
-            subtitles: ["All", "Gift cards"],
+            subtitles: [
+                { name: "All", url: "/allaccessories" },
+                { name: "Gift cards", url: "/giftcards" },
+            ],
         },
         {
             title: "Book a Test Ride",
+            url: "/booking",
         },
     ];
 
@@ -51,8 +67,7 @@ const Header = () => {
                         <Item
                             key={item.title}
                             title={item.title}
-                            isExpand={true}
-                            subtitles={item.subtitles}
+                            subtitles={item.subtitles || item.url}
                         />
                     ))}
                 </ul>
